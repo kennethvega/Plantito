@@ -1,0 +1,20 @@
+.hero-section {
+  display: grid;
+  grid-template-columns: 60% 40%;
+
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 130rem;
+
+  span {
+    color: var(--secondary-color);
+  }
+}
+
+.hero-text {
+  p {
+    font-size: 3.2rem;
+    margin-top: 20px;
+  }
+}
