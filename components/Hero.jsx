@@ -4,13 +4,13 @@ import { images } from "../constants";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <section className={`${styles["hero-section"]}`}>
+    <section className={`${styles["hero-section"]} section`}>
       <div className={styles["hero-text"]}>
         <h1>
           Spread <span>green</span> in your life.
         </h1>
         <p>Beautiful plants for homes and offices</p>
-        <button className="btn">Shop now</button>
+        <button className="btn margin-top">Shop now</button>
       </div>
       <div className={styles["hero-image"]}>
         <div className={styles["hero-images"]}>

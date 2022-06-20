@@ -1,11 +1,10 @@
 .hero-section {
   display: grid;
   grid-template-columns: 60% 40%;
-  padding: 0 3.2rem;
+
   align-items: center;
   margin: 0 auto;
   height: 100vh;
-  max-width: 130rem;
 
   span {
     color: var(--secondary-color);
@@ -17,6 +16,9 @@
     font-size: 3.2rem;
     margin-top: 20px;
   }
+}
+.hero-image {
+  justify-self: end;
 }
 .hero-images {
   width: 100%;

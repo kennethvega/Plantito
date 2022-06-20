@@ -1,1 +1,24 @@
-
+.best-seller-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.best-seller-card__container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-gap: 15px;
+  gap: 15px;
+  margin-top: 20px;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 15px;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
