@@ -2,16 +2,16 @@ import React from "react";
 import styles from "../styles/Home.module.scss";
 import Hero from "../components/Hero.jsx";
 import { client } from "../lib/client";
-import { BestSellerCard } from "../components";
-import CardPlantList from "../components/CardPlantList";
+// import { BestSellerCard, CardPlantList } from "../components";
+import CardPlantList from "../components/card/CardPlantList";
+import BestSellerCard from "../components/card/BestSellerCard";
+
 const Home = ({ products, bestsellers }) => {
   return (
     <>
-      {console.log(bestsellers)}
-      navbar
       <Hero />
       <div className={`${styles["best-seller-section"]} section`}>
-        <h3>Best Seller Plants</h3>
+        <h3 className="margin-bottom">Best Seller Plants</h3>
         <div className={`${styles["best-seller-card__container"]} margin-top`}>
           {bestsellers?.map((bestseller) => (
             <BestSellerCard bestseller={bestseller} key={bestseller._id} />
@@ -19,7 +19,7 @@ const Home = ({ products, bestsellers }) => {
         </div>
       </div>
       <div className={`${styles["best-seller-section"]} section`}>
-        <h3>Available Plants</h3>
+        <h3 className="margin-bottom">Available Plants</h3>
         <div className={`${styles["products-container"]}`}>
           {products?.map((product) => (
             <CardPlantList product={product} key={product._id} />

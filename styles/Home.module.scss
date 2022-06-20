@@ -5,20 +5,19 @@
 }
 .best-seller-card__container {
   display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
-  grid-gap: 15px;
-  gap: 15px;
+  justify-content: center;
+  grid-gap: 30px;
+  gap: 100px;
   margin-top: 20px;
+  width: 100%;
 }
 .products-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  grid-gap: 15px;
-  gap: 15px;
+  grid-gap: 30px;
+  gap: 100px;
   margin-top: 20px;
   width: 100%;
 }

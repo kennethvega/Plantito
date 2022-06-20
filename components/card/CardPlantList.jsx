@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Card.module.scss";
 import Link from "next/link";
 
-import { urlFor } from "../lib/client";
+import { urlFor } from "../../lib/client";
 
-const BestSellerCard = ({
-  bestseller: { image, slug, name, price, summary, tags },
+const CardPlantList = ({
+  product: { image, slug, name, price, summary, tags },
 }) => {
   return (
     <>
@@ -18,13 +18,13 @@ const BestSellerCard = ({
               height={250}
               className={styles.image}
             />
+            {console.log(image)}
           </div>
           <div className={styles["details-container"]}>
             <div className={styles["best-seller-card-details__container"]}>
               <p>{name}</p>
               <p>$ {price}</p>
             </div>
-
             <div className={styles["best-seller-card__summary"]}>{summary}</div>
           </div>
           <span className={styles["best-seller-card__tag"]}>
@@ -36,4 +36,4 @@ const BestSellerCard = ({
   );
 };
 
-export default BestSellerCard;
+export default CardPlantList;

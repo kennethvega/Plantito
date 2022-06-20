@@ -1,7 +1,7 @@
 .best-seller-card__container {
   background-color: var(--primary-color);
   max-width: 25rem;
-  height: 40rem;
+  height: 370px;
   border: none;
   border-radius: 19px;
   overflow: hidden;
@@ -32,17 +32,18 @@
   padding: 2rem 1rem;
 }
 .best-seller-card__summary {
-  margin-top: 10px;
-  font-size: 15px;
-  color: #fff;
+  margin-top: 13px;
+  font-size: 13px;
+  color: rgb(241, 241, 241);
 }
 .best-seller-card-details__container {
   color: #fff;
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
   p {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 
