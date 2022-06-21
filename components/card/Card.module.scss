@@ -1,20 +1,22 @@
-.best-seller-card__container {
+.card__container {
   background-color: var(--primary-color);
   max-width: 25rem;
-  height: 370px;
+  height: 45rem;
   border: none;
-  border-radius: 19px;
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: relative;
+  text-align: center;
 }
-.best-seller-card__image {
+.card__image {
   overflow: hidden;
   filter: opacity(0.85);
   transition: all 0.3s;
+  text-align: center;
 }
-.best-seller-card__container:hover .best-seller-card__image {
+.card__container:hover .card__image {
   filter: none;
 }
 .image {
@@ -22,21 +24,22 @@
   object-fit: cover;
   object-position: center;
   transition: all 0.5s;
+  width: 100%;
 }
 
-.best-seller-card__container:hover .best-seller-card__image > img {
+.card__container:hover .card__image > img {
   transform: scale(1.2);
 }
 
 .details-container {
   padding: 2rem 1rem;
 }
-.best-seller-card__summary {
+.card__summary {
   margin-top: 13px;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: rgb(241, 241, 241);
 }
-.best-seller-card-details__container {
+.details__container {
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -47,7 +50,7 @@
   }
 }
 
-.best-seller-card__tag {
+.card__tag {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -58,6 +61,6 @@
   background-color: #fff;
   border-radius: 25px;
 }
-.best-seller-card__container:hover .best-seller-card__tag {
+.card__container:hover .card__tag {
   display: none;
 }

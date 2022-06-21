@@ -14,9 +14,34 @@
 .btn:active {
   background-color: #2e5b43;
 }
+
+//reusable grids
+.grid {
+  display: grid;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+// center container
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .section {
   padding: 5rem 3.2rem;
   max-width: 140rem;
+}
+.padding-top {
+  padding-top: 5rem;
 }
 .margin-top {
   margin-top: 5rem;
