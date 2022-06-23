@@ -1,7 +1,8 @@
 .card__container {
   background-color: var(--primary-color);
   max-width: 25rem;
-  height: 45rem;
+  min-width: 23rem;
+  min-height: 40rem;
   border: none;
   border-radius: 10px;
   overflow: hidden;

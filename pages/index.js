@@ -10,7 +10,9 @@ const Home = ({ products, bestsellers }) => {
   return (
     <>
       <Hero />
-      <section className={`${styles["section"]}container padding-top`}>
+      <section
+        className={`${styles["section-plants"]}container padding-top margin-top`}
+      >
         <h3 className="margin-bottom">Best Seller Plants</h3>
         <div className={`${styles["card__container"]} container`}>
           {bestsellers?.map((bestseller) => (
@@ -18,7 +20,7 @@ const Home = ({ products, bestsellers }) => {
           ))}
         </div>
       </section>
-      <div className={`${styles["section"]} container margin-top padding-top `}>
+      <div className={` container  `}>
         <h3 className="margin-bottom">Available Plants</h3>
         <div className={`${styles["card__container"]}`}>
           {products?.map((product) => (

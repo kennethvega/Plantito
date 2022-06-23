@@ -1,6 +1,7 @@
 .hero-section {
-  height: 100vh;
   align-items: center;
+  padding: 15rem 3rem 0 3rem;
+  grid-template-columns: 60% 40%;
   span {
     color: var(--secondary-color);
   }

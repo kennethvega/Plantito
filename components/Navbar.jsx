@@ -22,11 +22,13 @@ const Navbar = () => {
   });
 
   return (
-    <div
+    <nav
       className={`${styles["navbar-container"]} ${
         showHeader ? styles.visible : styles.hidden
       }`}
     >
+      {/* menu */}
+
       <ul>
         {["Plants", "About", "Contact"].map((item) => (
           <li key={`link=${item}`}>
@@ -34,18 +36,17 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className={styles.logo}>
-        <Link href="/">
-          <>
-            <Logo /> <span>Plantito</span>
-          </>
-        </Link>
-      </div>
+      <Link href="/">
+        <div className={styles.logo}>
+          <Logo />
+          <span> Plantito</span>
+        </div>
+      </Link>
       <button type="button" className={styles["cart-icon"]} onClick="">
         <AiOutlineShopping />
         <span className={styles["cart-item-qty"]}>1</span>
       </button>
-    </div>
+    </nav>
   );
 };
 
