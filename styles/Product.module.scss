@@ -1,26 +1,44 @@
 .product-detail-container {
   display: flex;
-  gap: 40px;
-  margin: 40px;
-  margin-top: 100px;
+  gap: 5rem;
+  margin: 4rem;
+  margin-top: 10rem;
   color: var(--primary-color);
 }
 .image-container {
   img {
-    height: 400px;
-    width: 308px;
+    height: 43.5rem;
+    width: 30.8rem;
     border-radius: 10px;
     transition: all 0.3s;
   }
 }
 
-.product-detail-desc h4 {
-  font-size: 4rem;
+.product-detail-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  h4 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+  span {
+    font-size: 2rem;
+    font-weight: 700;
+  }
 }
 
 .quantity-desc {
   border: 1px solid gray;
   padding: 6px;
+}
+.quantity p {
+  color: rgb(116, 116, 116);
+}
+.details {
+  color: rgb(116, 116, 116);
 }
 .product-detail-desc .quantity {
   display: flex;
@@ -32,6 +50,22 @@
   font-size: 16px;
   padding: 6px 12px;
   cursor: pointer;
+}
+.small-images-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.small-image {
+  border-radius: 4px;
+  width: 6rem;
+  height: 7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.selected-image {
+  transition: all 0.3s;
+  outline: 3px solid var(--secondary-color);
 }
 .quantity-desc .minus {
   border-right: 1px solid gray;
@@ -47,13 +81,56 @@
 .reviews {
   display: flex;
   font-size: 1.5rem;
-  gap: 5px;
+  gap: 10px;
   color: var(--secondary-color);
+  align-items: center;
+
   p {
     color: var(--primary-color);
   }
 }
 
+.price {
+  margin-top: 3rem;
+  color: var(--secondary-color);
+}
+.quantity {
+  p {
+    font-weight: bold;
+  }
+}
+.buy-now {
+  margin: 3rem;
+  padding: 1.3rem 6rem;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 2rem;
+  &:hover {
+    background-color: #2e5b43;
+    transform: scale(1.05);
+  }
+}
+
+.add-to-cart {
+  padding: 1.3rem 5rem;
+  font-size: 2rem;
+  background-color: var(--bg-color);
+  border: 1px solid rgb(173, 173, 173);
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+  }
+}
 .maylike-products-wrapper {
   margin-top: 120px;
 }
@@ -70,15 +147,9 @@
   font-size: 28px;
 }
 
-.marquee-text {
-  font-size: 29px;
-  font-weight: 600;
-  margin: 60px 0px;
-  color: #f02d34;
-}
 .marquee {
   position: relative;
-  height: 446px;
+  height: 47rem;
   width: 100%;
   overflow-x: hidden;
 }

@@ -13,7 +13,6 @@ const CardPlantList = ({
         <div className={styles["card__container"]}>
           <div className={styles["card__image"]}>
             <img src={urlFor(image && image[0])} className={styles.image} />
-            {console.log(image)}
           </div>
           <div className={styles["details-container"]}>
             <div className={styles["details__container"]}>

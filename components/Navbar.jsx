@@ -9,8 +9,6 @@ const Navbar = () => {
   const [scrollPos, setScrollPos] = useState(0);
 
   const handleScroll = () => {
-    console.log("top", document.body.getBoundingClientRect().top);
-    console.log();
     setScrollPos(document.body.getBoundingClientRect().top);
     setShowHeader(document.body.getBoundingClientRect().top > scrollPos);
   };

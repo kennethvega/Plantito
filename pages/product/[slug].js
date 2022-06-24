@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Product.module.scss";
 import { client, urlFor } from "../../lib/client";
 import { CardPlantList } from "../../components";
@@ -8,19 +8,38 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
+
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price, tags } = product;
+  const [index, setIndex] = useState(0);
 
   return (
     <div className="container">
       <div className={styles["product-detail-container"]}>
-        <div className={styles["image-container"]}>
-          <img src={urlFor(image && image[0])} />
+        <div>
+          <div className={styles["image-container"]}>
+            <img src={urlFor(image && image[index])} />
+          </div>
+          <div className={styles["small-images-container"]}>
+            {image?.map((item, i) => (
+              <img
+                src={urlFor(item)}
+                className={
+                  i === index
+                    ? ` ${styles["small-image"]} ${styles["selected-image"]}
+            `
+                    : `${styles["small-image"]}`
+                }
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
         </div>
-        {/* small images here */}
+
         <div className={styles["product-detail-desc"]}>
           <h4>{name}</h4>
           <div className={styles.reviews}>
+            <p>Good for {tags[0]}</p>
             <div>
               <AiFillStar />
               <AiFillStar />
@@ -30,13 +49,13 @@ const ProductDetails = ({ product, products }) => {
             </div>
             <p>(20)</p>
           </div>
-          <p>Good for {tags[0]}</p>
-          <span>Details:</span>
-          <p>{details}</p>
-          <p>$ {price}</p>
+
+          <span className={styles.details}>Details:</span>
+          <p className={styles.details}>{details}</p>
+          <span className={styles.price}>$ {price}</span>
           <div className={styles.quantity}>
             <p>Quantity</p>
-            <p className={styles["quantity-desc"]}>
+            <div className={styles["quantity-desc"]}>
               <span className={styles.minus} onClick="">
                 <AiOutlineMinus />
               </span>
@@ -44,7 +63,7 @@ const ProductDetails = ({ product, products }) => {
               <span className={styles.plus} onClick="">
                 <AiOutlinePlus />
               </span>
-            </p>
+            </div>
           </div>
           <div className={styles.buttons}>
             <button type="button" className={styles["add-to-cart"]} onClick="">
