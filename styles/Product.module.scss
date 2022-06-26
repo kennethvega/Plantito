@@ -18,15 +18,16 @@
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+
   h4 {
     font-size: 4rem;
-  }
-  p {
-    font-size: 1.8rem;
   }
   span {
     font-size: 2rem;
     font-weight: 700;
+  }
+  p {
+    font-size: 2rem;
   }
 }
 
@@ -50,6 +51,7 @@
   font-size: 16px;
   padding: 6px 12px;
   cursor: pointer;
+  font-weight: 400;
 }
 .small-images-container {
   display: flex;
@@ -86,18 +88,20 @@
   align-items: center;
 
   p {
-    color: var(--primary-color);
+    color: rgb(116, 116, 116);
   }
 }
 
-.price {
-  margin-top: 3rem;
-  color: var(--secondary-color);
-}
 .quantity {
   p {
     font-weight: bold;
   }
+}
+.price {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary-color);
 }
 .buy-now {
   margin: 3rem;
@@ -121,7 +125,7 @@
   font-size: 2rem;
   background-color: var(--bg-color);
   border: 1px solid rgb(173, 173, 173);
-  color: var(--primary-color);
+  color: rgb(96, 96, 96);
   font-weight: 600;
   cursor: pointer;
   border-radius: 5px;

@@ -9,35 +9,40 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 
+import { useStateContext } from "../../context/StateContext";
+
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price, tags } = product;
-  const [index, setIndex] = useState(0);
 
+  const { decQty, incQty, qty, indexColor, setIndexColor, pot, onAdd } =
+    useStateContext();
   return (
     <div className="container">
       <div className={styles["product-detail-container"]}>
         <div>
           <div className={styles["image-container"]}>
-            <img src={urlFor(image && image[index])} />
+            <img src={urlFor(image && image[indexColor])} />
           </div>
           <div className={styles["small-images-container"]}>
             {image?.map((item, i) => (
               <img
                 src={urlFor(item)}
                 className={
-                  i === index
+                  i === indexColor
                     ? ` ${styles["small-image"]} ${styles["selected-image"]}
             `
                     : `${styles["small-image"]}`
                 }
-                onClick={() => setIndex(i)}
+                onClick={() => setIndexColor(i)}
               />
             ))}
           </div>
         </div>
 
         <div className={styles["product-detail-desc"]}>
-          <h4>{name}</h4>
+          <h4>
+            {name} + {pot} pot
+          </h4>
           <div className={styles.reviews}>
             <p>Good for {tags[0]}</p>
             <div>
@@ -52,21 +57,25 @@ const ProductDetails = ({ product, products }) => {
 
           <span className={styles.details}>Details:</span>
           <p className={styles.details}>{details}</p>
-          <span className={styles.price}>$ {price}</span>
+          <p className={styles.price}>$ {price}</p>
           <div className={styles.quantity}>
             <p>Quantity</p>
             <div className={styles["quantity-desc"]}>
-              <span className={styles.minus} onClick="">
+              <span className={styles.minus} onClick={decQty}>
                 <AiOutlineMinus />
               </span>
-              <span className={styles.num}>0</span>
-              <span className={styles.plus} onClick="">
+              <span className={styles.num}>{qty}</span>
+              <span className={styles.plus} onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </div>
           </div>
           <div className={styles.buttons}>
-            <button type="button" className={styles["add-to-cart"]} onClick="">
+            <button
+              type="button"
+              className={styles["add-to-cart"]}
+              onClick={() => onAdd(product, qty)}
+            >
               Add to Cart
             </button>
             <button type="button" className={styles["buy-now"]} onClick="">
