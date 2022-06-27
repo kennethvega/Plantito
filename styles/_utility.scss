@@ -14,6 +14,22 @@
 .btn:active {
   background-color: #2e5b43;
 }
+.btn-small {
+  background-color: var(--secondary-color);
+  padding: 10px 30px;
+  margin-top: 2rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-small:hover,
+.btn-small:active {
+  background-color: #2e5b43;
+}
 
 //reusable grids
 .grid {

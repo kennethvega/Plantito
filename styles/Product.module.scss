@@ -31,13 +31,6 @@
   }
 }
 
-.quantity-desc {
-  border: 1px solid gray;
-  padding: 6px;
-}
-.quantity p {
-  color: rgb(116, 116, 116);
-}
 .details {
   color: rgb(116, 116, 116);
 }
@@ -47,12 +40,32 @@
   margin-top: 10px;
   align-items: center;
 }
+.quantity-desc {
+  border: 1px solid gray;
+  padding: 6px;
+}
+.quantity p {
+  color: rgb(116, 116, 116);
+}
 .quantity-desc span {
   font-size: 16px;
   padding: 6px 12px;
   cursor: pointer;
   font-weight: 400;
 }
+
+.quantity-desc .minus {
+  border-right: 1px solid gray;
+  color: #f02d34;
+}
+.quantity-desc .num {
+  border-right: 1px solid gray;
+  font-size: 20px;
+}
+.quantity-desc .plus {
+  color: rgb(49, 168, 49);
+}
+
 .small-images-container {
   display: flex;
   gap: 10px;

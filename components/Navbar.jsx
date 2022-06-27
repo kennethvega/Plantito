@@ -4,6 +4,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 import Logo from "../images/plantito-logo.svg";
 import styles from "./Navbar.module.scss";
 import { Cart } from "./";
+
 import { useStateContext } from "../context/StateContext";
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();

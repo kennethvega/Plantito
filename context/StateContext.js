@@ -11,8 +11,19 @@ export const StateContext = ({ children }) => {
   const [qty, setQty] = useState(1);
   const [indexColor, setIndexColor] = useState(0);
   const [pot, setPot] = useState("white");
+
   let foundProduct;
   let index;
+
+  useEffect(() => {
+    const bodyStyle = document.body.style;
+    if (showCart) {
+      bodyStyle.overflowY = "hidden";
+    } else {
+      bodyStyle.overflowY = "auto";
+    }
+  }, [showCart]);
+  console.log(showCart);
 
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find(
@@ -105,7 +116,6 @@ export const StateContext = ({ children }) => {
     }
   }, [indexColor]);
 
-  console.log(pot);
   return (
     <Context.Provider
       value={{
@@ -117,6 +127,7 @@ export const StateContext = ({ children }) => {
         qty,
         indexColor,
         pot,
+
         incQty,
         decQty,
         onAdd,
