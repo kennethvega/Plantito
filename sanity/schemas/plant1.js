@@ -1,6 +1,6 @@
 export default {
-  name: "product",
-  title: "Product",
+  name: "product1",
+  title: "Product1",
   type: "document",
   fields: [
     {
@@ -11,6 +11,11 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: "potColor",
+      title: "Pot-color",
+      type: "string",
     },
     {
       name: "name",

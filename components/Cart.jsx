@@ -18,8 +18,16 @@ import emptyCart from "../images/Cart-Transparent-PNG.jpg";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart } =
-    useStateContext();
+  const {
+    totalPrice,
+    totalQuantities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuantity,
+    onRemove,
+    pot,
+    indexColor,
+  } = useStateContext();
 
   return (
     <div className={styles["cart-wrapper"]} ref={cartRef}>
@@ -64,22 +72,34 @@ const Cart = () => {
             cartItems.map((item) => (
               <div className={styles.product} key={item._id}>
                 <img
-                  src={urlFor(item?.image[0])}
+                  src={urlFor(item?.image[indexColor])}
                   className={styles["cart-product-image"]}
                 />
+
                 <div className={styles["item-desc"]}>
                   <div className={`${styles.flex} ${styles.top}`}>
                     <h5>{item.name}</h5>
                     <h4>${item.price}</h4>
                   </div>
+                  <p>{pot} pot</p>
                   <div className={`${styles.flex} ${styles.bottom}`}>
                     <div>
                       <div className={styles["quantity-desc"]}>
-                        <span className={styles.minus} onClick="">
+                        <span
+                          className={styles.minus}
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "dec")
+                          }
+                        >
                           <AiOutlineMinus />
                         </span>
-                        <span className={styles.num}>0</span>
-                        <span className={styles.plus} onClick="">
+                        <span className={styles.num}>{item.quantity}</span>
+                        <span
+                          className={styles.plus}
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "inc")
+                          }
+                        >
                           <AiOutlinePlus />
                         </span>
                       </div>
@@ -87,7 +107,7 @@ const Cart = () => {
                     <button
                       type="button"
                       className={styles["remove-item"]}
-                      onClick=""
+                      onClick={() => onRemove(item)}
                     >
                       <TiDeleteOutline />
                     </button>
