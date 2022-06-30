@@ -10,11 +10,9 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   const [indexColor, setIndexColor] = useState(0);
-  const [pot, setPot] = useState("white");
 
   let foundProduct;
   let index;
-
   useEffect(() => {
     const bodyStyle = document.body.style;
     if (showCart) {
@@ -23,12 +21,9 @@ export const StateContext = ({ children }) => {
       bodyStyle.overflowY = "auto";
     }
   }, [showCart]);
-  console.log(showCart);
 
   const onAdd = (product, quantity) => {
-    const checkProductInCart = cartItems.find((item) => {
-      item._id === product._id;
-    });
+    const checkProductInCart = cartItems.find((item) => item.id === product.id);
 
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
@@ -37,11 +32,17 @@ export const StateContext = ({ children }) => {
 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
-        if (cartProduct._id === product._id)
+        if (product.id === cartProduct.id) {
+          const newQty = cartProduct.quantity + quantity;
           return {
             ...cartProduct,
-            quantity: cartProduct.quantity + quantity,
+            quantity: newQty,
           };
+        } else {
+          return {
+            ...cartProduct,
+          };
+        }
       });
 
       setCartItems(updatedCartItems);
@@ -51,12 +52,27 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, { ...product }]);
     }
 
-    toast.success(`${qty} ${product.name} added to the cart.`);
+    toast.success(
+      `${qty} ${product.name} + ${product.potColor} pot added to the cart.`
+    );
   };
 
+  // const onRemove = (product) => {
+  //   foundProduct = cartItems.find((item) => item.id === product.id);
+  //   const newCartItems = cartItems.filter((item) => item.id !== product.id);
+
+  //   setTotalPrice(
+  //     (prevTotalPrice) =>
+  //       prevTotalPrice - foundProduct.price * foundProduct.quantity
+  //   );
+  //   setTotalQuantities(
+  //     (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
+  //   );
+  //   setCartItems(newCartItems);
+  // };
   const onRemove = (product) => {
-    foundProduct = cartItems.find((item) => item._id === product._id);
-    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+    foundProduct = cartItems.find((item) => item.id === product.id);
+    const newCartItems = cartItems.filter((item) => item.id !== product.id);
 
     setTotalPrice(
       (prevTotalPrice) =>
@@ -68,27 +84,26 @@ export const StateContext = ({ children }) => {
     setCartItems(newCartItems);
   };
 
-  const toggleCartItemQuantity = (id, value) => {
-    foundProduct = cartItems.find((item) => item._id === id);
-    index = cartItems.findIndex((product) => product._id === id);
-    const newCardItems = cartItems;
-
-    setCartItems([...newCardItems]);
+  const toggleCartItemQuanitity = (id, value) => {
+    foundProduct = cartItems.find((item) => item.id === id);
+    index = cartItems.findIndex((product) => product.id === id);
+    const newCartItems = cartItems.filter((item) => item.id !== id);
 
     if (value === "inc") {
-      newCardItems.map(
-        (item) => item._id === id && (item.quantity = foundProduct.quantity + 1)
-      );
-      setCartItems([...newCardItems]);
+      newCartItems.splice(index, 0, {
+        ...foundProduct,
+        quantity: foundProduct.quantity + 1,
+      });
+      setCartItems(newCartItems);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
     } else if (value === "dec") {
       if (foundProduct.quantity > 1) {
-        newCardItems.map(
-          (item) =>
-            item._id === id && (item.quantity = foundProduct.quantity - 1)
-        );
-        setCartItems([...newCardItems]);
+        newCartItems.splice(index, 0, {
+          ...foundProduct,
+          quantity: foundProduct.quantity - 1,
+        });
+        setCartItems(newCartItems);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
       }
@@ -106,15 +121,16 @@ export const StateContext = ({ children }) => {
       return prevQty - 1;
     });
   };
-  useEffect(() => {
-    if (indexColor === 0) {
-      setPot("white");
-    } else if (indexColor === 1) {
-      setPot("black");
-    } else {
-      return "white";
-    }
-  }, [indexColor]);
+
+  // useEffect(() => {
+  //   if (indexColor === 0) {
+  //     setPot("white");
+  //   } else if (indexColor === 1) {
+  //     setPot("black");
+  //   } else {
+  //     return "white";
+  //   }
+  // }, [indexColor]);
 
   return (
     <Context.Provider
@@ -125,18 +141,15 @@ export const StateContext = ({ children }) => {
         totalPrice,
         totalQuantities,
         qty,
-        indexColor,
-        pot,
-
         incQty,
         decQty,
         onAdd,
-        toggleCartItemQuantity,
+        toggleCartItemQuanitity,
         onRemove,
         setCartItems,
         setTotalPrice,
         setTotalQuantities,
-
+        indexColor,
         setIndexColor,
       }}
     >
@@ -144,5 +157,4 @@ export const StateContext = ({ children }) => {
     </Context.Provider>
   );
 };
-
 export const useStateContext = () => useContext(Context);

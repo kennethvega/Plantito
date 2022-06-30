@@ -23,7 +23,7 @@ const Cart = () => {
     totalQuantities,
     cartItems,
     setShowCart,
-    toggleCartItemQuantity,
+    toggleCartItemQuanitity,
     onRemove,
     pot,
     indexColor,
@@ -70,25 +70,27 @@ const Cart = () => {
         <div className={styles["product-container"]}>
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
-              <div className={styles.product} key={item._id}>
+              <div className={styles.product} key={item.id}>
                 <img
-                  src={urlFor(item?.image[indexColor])}
+                  src={urlFor(item?.image)}
                   className={styles["cart-product-image"]}
                 />
 
                 <div className={styles["item-desc"]}>
                   <div className={`${styles.flex} ${styles.top}`}>
                     <h5>{item.name}</h5>
+
+                    {console.log(item.id, item.name)}
                     <h4>${item.price}</h4>
                   </div>
-                  <p>{pot} pot</p>
+                  <p>{item.potColor} Ceramic Pot</p>
                   <div className={`${styles.flex} ${styles.bottom}`}>
                     <div>
                       <div className={styles["quantity-desc"]}>
                         <span
                           className={styles.minus}
                           onClick={() =>
-                            toggleCartItemQuantity(item._id, "dec")
+                            toggleCartItemQuanitity(item.id, "dec")
                           }
                         >
                           <AiOutlineMinus />
@@ -97,7 +99,7 @@ const Cart = () => {
                         <span
                           className={styles.plus}
                           onClick={() =>
-                            toggleCartItemQuantity(item._id, "inc")
+                            toggleCartItemQuanitity(item.id, "inc")
                           }
                         >
                           <AiOutlinePlus />

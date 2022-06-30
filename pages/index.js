@@ -35,7 +35,7 @@ const Home = ({ products, bestsellers }) => {
 export const getServerSideProps = async () => {
   const query = '*[_type == "bestseller"]';
   const bestsellers = await client.fetch(query);
-  const productQuery = '*[_type == "product"]';
+  const productQuery = '*[_type == "product3"]';
   const products = await client.fetch(productQuery);
 
   return {
