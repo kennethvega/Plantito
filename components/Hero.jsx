@@ -1,26 +1,40 @@
 import React from "react";
+
+import { motion } from "framer-motion";
 import styles from "./Hero.module.scss";
 import { images } from "../constants";
+
 import Image from "next/image";
+
 const Hero = () => {
   return (
     <section className={`${styles["hero-section"]}  grid container`}>
-      <div className={styles["hero-text"]}>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={styles["hero-text"]}
+      >
         <h1>
           Spread <span>green</span> in your life.
         </h1>
         <p>Beautiful plants for homes and offices</p>
         <button className="btn margin-top">Shop now</button>
-      </div>
+      </motion.div>
       <div className={styles["hero-image"]}>
-        <div className={styles["hero-images"]}>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={styles["hero-images"]}
+        >
           <Image
             src={images.heroImage}
             alt="Plants example"
             height={515}
             width={500}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

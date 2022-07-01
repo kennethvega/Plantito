@@ -8,7 +8,7 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-
+import { motion } from "framer-motion";
 import { useStateContext } from "../../context/StateContext";
 
 const ProductDetails = ({ products, product }) => {

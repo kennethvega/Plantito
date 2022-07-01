@@ -5,3 +5,5 @@ export { default as Product } from "./Product";
 export { default as Cart } from "./Cart";
 export { default as BestSellerCard } from "./card/BestSellerCard";
 export { default as CardPlantList } from "./card/CardPlantList";
+export { default as FeaturedBrands } from "./FeaturedBrands";
+export { default as Hero } from "./Hero";

@@ -36,6 +36,7 @@
   padding: 2rem 1rem;
 }
 .card__summary {
+  display: flex;
   margin-top: 13px;
   font-size: 1.3rem;
   color: rgb(241, 241, 241);
@@ -45,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
+
   p {
     font-size: 1.5rem;
     font-weight: 700;
