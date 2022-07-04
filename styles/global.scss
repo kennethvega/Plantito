@@ -21,6 +21,9 @@
 html {
   font-size: 62.5%;
 }
+html:focus-within {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Poppins", sans-serif;

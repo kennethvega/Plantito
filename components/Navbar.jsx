@@ -36,11 +36,15 @@ const Navbar = () => {
         {/* menu */}
 
         <ul>
-          {["Plants", "About", "Contact"].map((item) => (
-            <li key={`link=${item}`}>
-              <Link href={`${item}`}>{item}</Link>
-            </li>
-          ))}
+          <li>
+            <Link href="/#Plants">Plants</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
         <Link href="/">
           <div className={styles.logo}>
