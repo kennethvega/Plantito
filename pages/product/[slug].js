@@ -8,13 +8,29 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-import { motion } from "framer-motion";
+
 import { useStateContext } from "../../context/StateContext";
-
 const ProductDetails = ({ products, product }) => {
-  const { decQty, incQty, qty, indexColor, setIndexColor, onAdd, setShowCart } =
-    useStateContext();
+  const {
+    decQty,
+    incQty,
+    qty,
+    indexColor,
+    setIndexColor,
+    onAdd,
+    setShowCart,
+    setQty,
+  } = useStateContext();
 
+  const handleVariant = () => {
+    if (indexColor === 1) {
+      setQty(1);
+      setIndexColor(0);
+    } else if (indexColor === 0) {
+      setIndexColor(1);
+      setQty(1);
+    }
+  };
   const handleClick = () => {
     if (indexColor === 0) {
       return onAdd(product, qty);
@@ -26,7 +42,7 @@ const ProductDetails = ({ products, product }) => {
     if (indexColor === 0) {
       onAdd(product, qty);
       setShowCart(true);
-    } else {
+    } else if (indexColor === 1) {
       onAdd(product.variety, qty);
       setShowCart(true);
     }
@@ -49,7 +65,7 @@ const ProductDetails = ({ products, product }) => {
           `
                   : `${styles["small-image"]}`
               }
-              onClick={() => setIndexColor(0)}
+              onClick={() => handleVariant()}
             />
             <img
               src={urlFor(product.variety.image)}
@@ -59,7 +75,7 @@ const ProductDetails = ({ products, product }) => {
           `
                   : `${styles["small-image"]}`
               }
-              onClick={() => setIndexColor(1)}
+              onClick={() => handleVariant()}
             />
           </div>
         </div>

@@ -9,20 +9,31 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className={`${styles["hero-section"]}  grid container`}>
-      <motion.div
-        // initial={{ y: 20, opacity: 0 }}
-        // animate={{ y: 0, opacity: 1 }}
-        // transition={{ duration: 0.5 }}
-        className={styles["hero-text"]}
-      >
-        <h1>
+      <motion.div className={styles["hero-text"]}>
+        <motion.h1
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
           Spread <span>green</span> in your life.
-        </h1>
-        <p>Beautiful plants for homes and offices</p>
+        </motion.h1>
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          Beautiful plants for homes and offices
+        </motion.p>
         <Link href="/#Plants">
-          <button type="button" className="btn margin-top">
+          <motion.button
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            type="button"
+            className="btn margin-top"
+          >
             <a>Shop now</a>
-          </button>
+          </motion.button>
         </Link>
       </motion.div>
       <div className={styles["hero-image"]}>
