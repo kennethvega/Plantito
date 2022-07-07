@@ -7,8 +7,8 @@ const Home = ({ products, bestsellers }) => {
   return (
     <>
       <Hero />
-      <Plants products={products} bestsellers={bestsellers} />
       <FeaturedBrands />
+      <Plants products={products} bestsellers={bestsellers} />
     </>
   );
 };

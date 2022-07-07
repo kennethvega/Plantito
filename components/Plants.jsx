@@ -64,7 +64,7 @@ const Plants = ({ products, bestsellers }) => {
           className={`${styles["card__container"]}`}
         >
           {filterWork?.map((product) => (
-            <CardPlantList product={product} key={product._id} />
+            <CardPlantList product={product.variety} key={product._id} />
           ))}
         </motion.div>
       </motion.div>

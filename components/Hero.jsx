@@ -35,6 +35,16 @@ const Hero = () => {
             <a>Shop now</a>
           </motion.button>
         </Link>
+        <div className={styles["hero-num"]}>
+          <div className={styles["hero-num-content"]}>
+            <p>3202+</p>
+            <span>Customers</span>
+          </div>
+          <div className={styles["hero-num-content"]}>
+            <p>5230+</p>
+            <span>Delivered</span>
+          </div>
+        </div>
       </motion.div>
       <div className={styles["hero-image"]}>
         <motion.div

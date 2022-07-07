@@ -58,9 +58,9 @@ const ProductDetails = ({ products, product }) => {
           </div>
           <div className={styles["small-images-container"]}>
             <img
-              src={urlFor(product.image)}
+              src={urlFor(product.variety.image)}
               className={
-                0 === indexColor
+                1 === indexColor
                   ? ` ${styles["small-image"]} ${styles["selected-image"]}
           `
                   : `${styles["small-image"]}`
@@ -68,9 +68,9 @@ const ProductDetails = ({ products, product }) => {
               onClick={() => handleVariant()}
             />
             <img
-              src={urlFor(product.variety.image)}
+              src={urlFor(product.image)}
               className={
-                1 === indexColor
+                0 === indexColor
                   ? ` ${styles["small-image"]} ${styles["selected-image"]}
           `
                   : `${styles["small-image"]}`
@@ -141,7 +141,7 @@ const ProductDetails = ({ products, product }) => {
             {products.map((item) => (
               <CardPlantList
                 key={item._id}
-                product={item}
+                product={item.variety}
                 className={styles["media-element"]}
               />
             ))}
