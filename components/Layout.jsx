@@ -35,8 +35,9 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <main className={styles["main-container"]}>{children}</main>
-      <footer>
+      <footer className={styles.footer}>
         <Footer />
+        <p className={styles.dev}>Design and built by Kenneth Vega</p>
       </footer>
     </div>
   );

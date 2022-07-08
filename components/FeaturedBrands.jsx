@@ -4,7 +4,7 @@ import styles from "./FeaturedBrands.module.scss";
 const FeaturedBrands = () => {
   return (
     <div className={styles.container}>
-      <p>Feature in</p>
+      <p>as Featured in</p>
       <div className={styles["brands-container"]}>
         <img src="./forbes.svg" alt="" />
         <img src="./businessinsider.svg" alt="" />

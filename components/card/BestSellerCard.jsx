@@ -12,7 +12,7 @@ const BestSellerCard = ({
       <Link href={`/product/${slug.current}`}>
         <div className={styles["card__container"]}>
           <div className={styles["card__image"]}>
-            <img src={urlFor(image && image[0])} className={styles.image} />
+            <img src={urlFor(image && image[1])} className={styles.image} />
           </div>
           <div className={styles["details-container"]}>
             <div className={styles["details__container"]}>
