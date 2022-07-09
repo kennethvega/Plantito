@@ -1,5 +1,5 @@
+@use "./mixin" as mixin;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
-
 :root {
   --primary-color: #363636;
   --secondary-color: #377c57;
@@ -20,6 +20,22 @@
 
 html {
   font-size: 62.5%;
+  @include mixin.respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include mixin.respond(tab-port) {
+    font-size: 50%;
+  }
+  @include mixin.respond(phone-big) {
+    font-size: 45%;
+  }
+
+  @include mixin.respond(phone-sm) {
+    font-size: 38%;
+  }
+  @include mixin.respond(phone-esm) {
+    font-size: 35%;
+  }
 }
 html:focus-within {
   scroll-behavior: smooth;
@@ -36,12 +52,26 @@ h1 {
   font-weight: 700;
   font-size: 8.5rem;
   line-height: 102px;
+  @include mixin.respond(tab-port) {
+    font-size: 7rem;
+    line-height: 60px;
+  }
+  @include mixin.respond(phone) {
+    font-size: 6rem;
+    // line-height: 50px;
+  }
+  @include mixin.respond(phone-sm) {
+    line-height: 40px;
+  }
 }
 
 h3 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 4rem;
   line-height: 60px;
   text-align: center;
   color: var(--secondary-color);
+  // @include mixin.respond(tab-port) {
+  // font-size: ;
+  // }
 }

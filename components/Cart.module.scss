@@ -1,3 +1,4 @@
+@use "../styles/mixin" as mixin;
 .cart-wrapper {
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
@@ -11,32 +12,34 @@
 }
 .cart-container {
   height: 100vh;
-  width: 600px;
+  width: 60rem;
   background-color: white;
   float: right;
-  padding: 40px 10px;
+  padding: 4rem 1rem;
   position: relative;
   z-index: 100000;
-
   overflow: hidden;
+  @include mixin.respond(phone) {
+    width: 100vw;
+  }
 }
 .cart-heading {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 500;
   cursor: pointer;
   gap: 2px;
-  margin-left: 10px;
+  margin-left: 1rem;
   border: none;
   background-color: transparent;
 }
 
 .cart-heading .heading {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 .cart-num-items {
-  margin-left: 10px;
+  margin-left: 1rem;
   color: var(--secondary-color);
 }
 .empty-cart {
@@ -58,12 +61,12 @@
   margin-top: 15px;
   overflow: auto;
   max-height: 70vh;
-  padding: 20px 10px;
+  padding: 2rem 1rem;
 }
 .product {
   display: flex;
-  gap: 30px;
-  padding: 20px;
+  gap: 3rem;
+  padding: 2rem;
 }
 .product .cart-product-image {
   width: 10rem;
@@ -73,7 +76,7 @@
 .item-desc .flex {
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 35rem;
   color: var(--primary-color);
 }
 .item-desc p {
@@ -83,20 +86,20 @@
   margin-top: 60px;
 }
 .flex h5 {
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 .flex h4 {
-  font-size: 20px;
+  font-size: 2rem;
 }
 .total {
   display: flex;
   justify-content: space-between;
 }
 .total h3 {
-  font-size: 22px;
+  font-size: 2.2rem;
 }
 .remove-item {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #f02d34;
   cursor: pointer;
   background: transparent;
@@ -110,8 +113,8 @@
   color: rgb(116, 116, 116);
 }
 .quantity-desc span {
-  font-size: 16px;
-  padding: 6px 12px;
+  font-size: 1.6rem;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
   font-weight: 400;
 }
@@ -122,7 +125,7 @@
 }
 .quantity-desc .num {
   border-right: 1px solid gray;
-  font-size: 20px;
+  font-size: 2rem;
 }
 .quantity-desc .plus {
   color: rgb(49, 168, 49);

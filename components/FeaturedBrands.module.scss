@@ -1,3 +1,4 @@
+@use "../styles/mixin" as mixin;
 .container {
   margin-top: 10rem;
   display: flex;
@@ -21,5 +22,23 @@
   justify-content: center;
   img {
     width: 20rem;
+  }
+  @include mixin.respond(tab-land) {
+    gap: 5rem;
+    img {
+      width: 15rem;
+    }
+  }
+  @include mixin.respond(phone-big) {
+    gap: 5rem;
+    img {
+      width: 12rem;
+    }
+  }
+  @include mixin.respond(phone) {
+    gap: 3rem;
+    img {
+      width: 10rem;
+    }
   }
 }

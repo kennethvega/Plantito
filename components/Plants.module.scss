@@ -1,3 +1,4 @@
+@use "../styles/mixin" as mixin;
 .section-plants {
   display: flex;
   flex-direction: column;
@@ -7,10 +8,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  grid-gap: 30px;
-  gap: 29px;
-  margin: 20px auto;
+  gap: 2.9rem;
+  margin: 3rem auto;
   width: 100%;
+  @include mixin.respond(phone-big) {
+    gap: 2rem;
+  }
+  @include mixin.respond(phone) {
+    gap: 2rem;
+  }
 }
 .app__work-filter {
   display: flex;

@@ -1,13 +1,19 @@
+@use "../styles/mixin" as mixin;
 .btn {
   background-color: var(--secondary-color);
   padding: 1rem 3rem;
-
   color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 2.4rem;
   cursor: pointer;
   transition: all 0.3s;
+  @include mixin.respond(tab-port) {
+    font-size: 2rem;
+  }
+  @include mixin.respond(phone) {
+    font-size: 1.5rem;
+  }
 }
 
 .btn:hover,
@@ -44,13 +50,19 @@
 
 .grid--5-cols {
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  @include mixin.respond(phone-big) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 // center container
 .container {
   max-width: 130rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
+  @include mixin.respond(phone-big) {
+    padding: 0;
+  }
 }
 
 .section {

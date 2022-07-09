@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
       </motion.div>
-      <div className={styles["hero-image"]}>
+      <div className={styles["hero-image-container"]}>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

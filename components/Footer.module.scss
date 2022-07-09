@@ -1,3 +1,4 @@
+@use "../styles/mixin" as mixin;
 .logo {
   display: flex;
   cursor: pointer;
@@ -77,4 +78,17 @@
 .footer-link:hover,
 .footer-link:active {
   color: #555;
+}
+.nav-col {
+  @include mixin.respond(phone-big) {
+    grid-row: 2;
+    grid-column: span 2;
+    margin-top: 50px;
+  }
+}
+.logo-col,
+.address-col {
+  @include mixin.respond(phone-big) {
+    grid-column: span 3;
+  }
 }

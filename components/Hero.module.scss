@@ -1,3 +1,4 @@
+@use "../styles/mixin" as mixin;
 .hero-section {
   align-items: center;
   padding-top: 15rem;
@@ -5,12 +6,32 @@
   span {
     color: var(--secondary-color);
   }
+  @include mixin.respond(phone-big) {
+    grid-template-columns: 1fr;
+    padding: 15rem 7rem 0 7rem;
+  }
+  @include mixin.respond(phone) {
+    grid-template-columns: 1fr;
+    padding: 15rem 4rem 0 4rem;
+  }
+  @include mixin.respond(phone-sm) {
+    padding-top: 15rem;
+  }
 }
 
 .hero-text {
+  @include mixin.respond(phone-big) {
+    text-align: center;
+  }
   p {
     font-size: 2.6rem;
     margin-top: 20px;
+    @include mixin.respond(tab-port) {
+      font-size: 2rem;
+    }
+    @include mixin.respond(phone) {
+      font-size: 1.5rem;
+    }
   }
   button a {
     color: #fff;
@@ -22,14 +43,28 @@
 //   align-items: center;
 //   justify-content: flex-end;
 // }
+.hero-image-container {
+  @include mixin.respond(phone-big) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .hero-images {
   width: 100%;
+  @include mixin.respond(phone-big) {
+    width: 40%;
+  }
 }
 .hero-num {
+  margin-top: 2rem;
   display: flex;
   gap: 6rem;
   align-items: center;
   justify-content: flex-start;
+  @include mixin.respond(phone-big) {
+    justify-content: center;
+  }
 }
 .hero-num-content {
   p {
