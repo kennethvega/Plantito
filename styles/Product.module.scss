@@ -5,7 +5,7 @@
   margin: 4rem;
   margin-top: 15rem;
   color: var(--primary-color);
-  @media screen and (max-width: 755px) {
+  @media screen and (max-width: 787px) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -17,7 +17,7 @@
     width: 30.8rem;
     border-radius: 10px;
     transition: all 0.3s;
-    @media screen and (max-width: 755px) {
+    @media screen and (max-width: 787px) {
       height: 53.5rem;
       width: 43.8rem;
       border-radius: 10px;

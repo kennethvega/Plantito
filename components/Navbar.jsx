@@ -10,6 +10,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const [showHeader, setShowHeader] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
+  const [active, setActive] = useState(false);
 
   const handleScroll = () => {
     setScrollPos(document.body.getBoundingClientRect().top);
@@ -21,28 +22,60 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-
+  const handleClick = () => {
+    if (active === true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  };
+  console.log(active);
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <nav
+      <div
         className={`${styles["navbar-container"]} ${
           showHeader ? styles.visible : styles.hidden
         }`}
       >
-        {/* menu */}
+        {/* className={
+                0 === indexColor
+                  ? ` ${styles["small-image"]} ${styles["selected-image"]}
+          `
+                  : `${styles["small-image"]}`
+              }
+              onClick={() => handleVariant()}
+            /> */}
 
-        <ul>
-          <li>
-            <Link href="/#Plants">Plants</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
+        <div className={styles.burger}>
+          <div
+            className={
+              active === false
+                ? `${styles.strip} ${styles["burger-strip-2"]}`
+                : `${styles.strip} ${styles["burger-strip-2"]} ${styles.active}`
+            }
+            onClick={() => handleClick()}
+          >
+            <div className={styles.line1}></div>
+            <div className={styles.line2}></div>
+            <div className={styles.line3}></div>
+          </div>
+        </div>
+
+        <nav className={styles["nav-links"]}>
+          <ul>
+            <li>
+              <Link href="/#Plants">Plants</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+
         <Link href="/">
           <div className={styles.logo}>
             <img src="./plantito-logo.svg" alt="plantito-logo image" />
@@ -58,7 +91,7 @@ const Navbar = () => {
           <span className={styles["cart-item-qty"]}>{totalQuantities}</span>
         </button>
         {showCart && <Cart />}
-      </nav>
+      </div>
     </motion.div>
   );
 };

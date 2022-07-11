@@ -1,3 +1,5 @@
+@use "../styles/mixin" as mixin;
+
 .navbar-container {
   margin: 0 auto;
   max-width: 140rem;
@@ -12,6 +14,12 @@
   right: 0;
   left: 0;
   z-index: 211;
+
+  .nav-links {
+    @include mixin.respond(phone-big) {
+      display: none;
+    }
+  }
 
   ul {
     display: flex;
@@ -107,3 +115,56 @@
   font-weight: 600;
 }
 // menu navbar
+
+.burger {
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+
+  @include mixin.respond(phone-big) {
+    display: inline-block;
+  }
+}
+
+.burger-strip {
+  transition: all 0.5s ease;
+}
+.strip div {
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary-color);
+  margin: 7px;
+  transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 30px;
+  @include mixin.respond(phone) {
+    width: 28px;
+  }
+  @include mixin.respond(phone-sm) {
+    width: 25px;
+  }
+}
+
+.active {
+  .line1 {
+    transform: translateY(13px) rotate(45deg);
+  }
+  .line2 {
+    opacity: 0;
+  }
+  .line3 {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+// .active {
+//   .burger-strip-2 div:nth-child(2) {
+//     opacity: 0;
+//   }
+// }
+// .active {
+//   .burger-strip-2 div:last-child {
+//     transform: translateY(-13px) rotate(-45deg);
+//   }
+// }
