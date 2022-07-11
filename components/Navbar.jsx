@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
-import Logo from "../images/plantito-logo.svg";
+
 import styles from "./Navbar.module.scss";
 import { Cart } from "./";
 import { motion } from "framer-motion";
@@ -45,7 +45,7 @@ const Navbar = () => {
         </ul>
         <Link href="/">
           <div className={styles.logo}>
-            <Logo />
+            <img src="./plantito-logo.svg" alt="plantito-logo image" />
             <span> Plantito</span>
           </div>
         </Link>
