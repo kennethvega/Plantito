@@ -60,9 +60,7 @@
   max-width: 130rem;
   margin: 0 auto;
   padding: 2rem;
-  @include mixin.respond(phone-big) {
-    padding: 0;
-  }
+
 }
 
 .section {

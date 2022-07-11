@@ -7,10 +7,10 @@ import { Cart } from "./";
 import { motion } from "framer-motion";
 import { useStateContext } from "../context/StateContext";
 const Navbar = () => {
-  const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, totalQuantities, active, setActive } =
+    useStateContext();
   const [showHeader, setShowHeader] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
-  const [active, setActive] = useState(false);
 
   const handleScroll = () => {
     setScrollPos(document.body.getBoundingClientRect().top);
@@ -41,15 +41,6 @@ const Navbar = () => {
           showHeader ? styles.visible : styles.hidden
         }`}
       >
-        {/* className={
-                0 === indexColor
-                  ? ` ${styles["small-image"]} ${styles["selected-image"]}
-          `
-                  : `${styles["small-image"]}`
-              }
-              onClick={() => handleVariant()}
-            /> */}
-
         <div className={styles.burger}>
           <div
             className={
@@ -64,16 +55,24 @@ const Navbar = () => {
             <div className={styles.line3}></div>
           </div>
         </div>
+        {/*  <nav className={styles["nav-links"]}> */}
 
-        <nav className={styles["nav-links"]}>
+        <nav
+          className={
+            active === true
+              ? `${styles["nav-links"]} ${styles["nav-links-active"]}`
+              : `${styles["nav-links"]}`
+          }
+        >
           <ul>
-            <li>
+            <li onClick={() => setActive(false)}>
               <Link href="/#Plants">Plants</Link>
             </li>
-            <li>
+            <li onClick={() => setActive(false)}>
               <Link href="/about">About</Link>
             </li>
           </ul>
+          <div className={styles.overlay}></div>
         </nav>
 
         <Link href="/">

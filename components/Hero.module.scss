@@ -12,10 +12,10 @@
   }
   @include mixin.respond(phone) {
     grid-template-columns: 1fr;
-    padding: 15rem 4rem 0 4rem;
+    padding: 20rem 4rem 0 4rem;
   }
   @include mixin.respond(phone-sm) {
-    padding-top: 15rem;
+    padding-top: 20rem;
   }
 }
 
@@ -54,6 +54,35 @@
   width: 100%;
   @include mixin.respond(phone-big) {
     width: 40%;
+  }
+  position: relative;
+}
+.leaf1 {
+  width: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: rotate(180deg);
+  @include mixin.respond(phone) {
+    width: 8rem;
+  }
+}
+.leaf2 {
+  width: 8rem;
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  @include mixin.respond(phone) {
+    width: 5rem;
+  }
+}
+.leaf3 {
+  width: 10rem;
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  @include mixin.respond(phone) {
+    width: 8rem;
   }
 }
 .hero-num {

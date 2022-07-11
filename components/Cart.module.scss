@@ -7,7 +7,7 @@
   top: 0;
   z-index: 100;
   /* will-change: transform; */
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease;
   overflow-y: hidden;
 }
 .cart-container {
@@ -18,10 +18,17 @@
   padding: 4rem 1rem;
   position: relative;
   z-index: 100000;
-  overflow: hidden;
+
   @include mixin.respond(phone) {
-    width: 100vw;
+    width: 85%;
   }
+  @media screen and (max-width: 455px) {
+    width: 100%;
+  }
+
+  // @include mixin.respond(phone-xsm) {
+  //   width: 100%;
+  // }
 }
 .cart-heading {
   display: flex;
@@ -67,7 +74,9 @@
   display: flex;
   gap: 3rem;
   padding: 2rem;
+  justify-content: space-between;
 }
+
 .product .cart-product-image {
   width: 10rem;
   height: 15rem;

@@ -59,6 +59,30 @@ const Hero = () => {
             height={515}
             width={500}
           />
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className={styles.leaf1}
+          >
+            <Image src={images.leaf3} />
+          </motion.div>
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className={styles.leaf2}
+          >
+            <Image src={images.leaf2} />
+          </motion.div>
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className={styles.leaf3}
+          >
+            <Image src={images.leaf1} />
+          </motion.div>
         </motion.div>
       </div>
     </section>

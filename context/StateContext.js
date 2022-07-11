@@ -10,17 +10,17 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   const [indexColor, setIndexColor] = useState(1);
-
+  const [active, setActive] = useState(false);
   let foundProduct;
   let index;
   useEffect(() => {
     const bodyStyle = document.body.style;
-    if (showCart) {
+    if (showCart || active) {
       bodyStyle.overflowY = "hidden";
     } else {
       bodyStyle.overflowY = "auto";
     }
-  }, [showCart]);
+  }, [showCart, active]);
 
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find((item) => item.id === product.id);
@@ -141,6 +141,8 @@ export const StateContext = ({ children }) => {
         totalPrice,
         totalQuantities,
         qty,
+        active,
+        setActive,
         setQty,
         incQty,
         decQty,

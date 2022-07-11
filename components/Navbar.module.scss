@@ -17,10 +17,21 @@
 
   .nav-links {
     @include mixin.respond(phone-big) {
-      display: none;
+      position: absolute;
+      left: 0px;
+      height: 100vh;
+      top: 0;
+      background-color: #fff;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      z-index: 10;
+      transition: all 0.5s ease;
+      transform: translateX(-100%);
     }
   }
-
   ul {
     display: flex;
     justify-content: flex-start;
@@ -28,6 +39,9 @@
     display: flex;
     align-items: center;
     gap: 3rem;
+    @include mixin.respond(phone-big) {
+      flex-direction: column;
+    }
 
     li {
       list-style: none;
@@ -35,9 +49,12 @@
       a {
         color: var(--primary-color);
         text-decoration: none;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 500;
         transition: all 0.3s;
+        @include mixin.respond(phone-big) {
+          font-size: 3rem;
+        }
 
         &:hover {
           color: var(--secondary-color);
@@ -45,7 +62,11 @@
       }
     }
   }
+  .nav-links-active {
+    transform: translateX(-0%);
+  }
 }
+
 .logo {
   display: flex;
   cursor: pointer;
@@ -54,15 +75,26 @@
   position: absolute;
   top: 15px;
   left: 45%;
-  gap: 10px;
-
+  gap: 1rem;
   // img {
-  //   width: 3.2rem;
+  //   width: 4rem;
   // }
+  @include mixin.respond(phone-big) {
+    left: 40%;
+  }
 
+  @include mixin.respond(phone-sm) {
+    left: 38%;
+  }
+  @include mixin.respond(phone-xsm) {
+    left: 35%;
+  }
   span {
-    font-size: 2.5rem;
+    font-size: 25px;
     color: var(--secondary-color);
+    @include mixin.respond(phone) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -91,7 +123,7 @@
 }
 
 .cart-icon {
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--primary-color);
   cursor: pointer;
   position: relative;
@@ -123,7 +155,7 @@
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
-
+  z-index: 100;
   @include mixin.respond(phone-big) {
     display: inline-block;
   }
@@ -158,13 +190,3 @@
     transform: translateY(-6px) rotate(-45deg);
   }
 }
-// .active {
-//   .burger-strip-2 div:nth-child(2) {
-//     opacity: 0;
-//   }
-// }
-// .active {
-//   .burger-strip-2 div:last-child {
-//     transform: translateY(-13px) rotate(-45deg);
-//   }
-// }

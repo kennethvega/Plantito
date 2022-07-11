@@ -7,7 +7,7 @@ import styles from "./Layout.module.scss";
 
 const Layout = ({ children }) => {
   return (
-    <div className={styles.layout}>
+    <div>
       <Head>
         <title>Plantito</title>
         <link

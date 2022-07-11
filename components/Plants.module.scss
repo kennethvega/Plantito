@@ -36,6 +36,9 @@
   transition: all 0.3s ease;
   margin: 0.5rem;
   font-size: 1.5rem;
+  @include mixin.respond(phone-big) {
+    font-size: 2rem;
+  }
 
   &:hover {
     background-color: var(--secondary-color);
