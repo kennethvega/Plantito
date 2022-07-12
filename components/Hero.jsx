@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className={styles.leaf1}
           >
-            <Image src={images.leaf3} />
+            <Image src={images.leaf3} alt="leaf" />
           </motion.div>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
@@ -73,7 +73,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className={styles.leaf2}
           >
-            <Image src={images.leaf2} />
+            <Image src={images.leaf2} alt="leaf" />
           </motion.div>
           <motion.div
             initial={{ y: -20, opacity: 0 }}
@@ -81,7 +81,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className={styles.leaf3}
           >
-            <Image src={images.leaf1} />
+            <Image src={images.leaf1} alt="leaf" />
           </motion.div>
         </motion.div>
       </div>

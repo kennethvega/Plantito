@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import Image from "next/image";
@@ -10,13 +10,6 @@ import Logo from "../images/plantito-logo.svg";
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities, active, setActive } =
     useStateContext();
-  const [showHeader, setShowHeader] = useState(true);
-  const [scrollPos, setScrollPos] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPos(document.body.getBoundingClientRect().top);
-    setShowHeader(document.body.getBoundingClientRect().top > scrollPos);
-  };
 
   const handleClick = () => {
     if (active === true) {
@@ -25,13 +18,6 @@ const Navbar = () => {
       setActive(true);
     }
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
 
   return (
     <motion.div
@@ -39,11 +25,7 @@ const Navbar = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <div
-        className={`${styles["navbar-container"]} ${
-          showHeader ? styles.visible : styles.hidden
-        } `}
-      >
+      <div className={styles["navbar-container"]}>
         <div className={styles.burger}>
           <div
             className={

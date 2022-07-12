@@ -113,11 +113,7 @@
     }
   }
 }
-.visible {
-  /* display: flex; */
-  visibility: visible;
-  transition: all 0.3s;
-}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -130,12 +126,7 @@
   border-bottom: 1px solid #c9c9c9;
 }
 
-.hidden {
-  /* display: none; */
-  visibility: hidden;
-  transition: all 0.3s;
-  transform: translateY(-100%);
-}
+
 
 .cart-icon {
   font-size: 4rem;

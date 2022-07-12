@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="description" content="An Ecommerce store for plants"></meta>
       </Head>
       <header>
         <Navbar />
