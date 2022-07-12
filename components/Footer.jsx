@@ -5,7 +5,7 @@ import Logo from "../images/plantito-logo.svg";
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 const Footer = () => {
   return (
-    <div className="container grid grid--5-cols ">
+    <div className="container grid grid--5-cols " id="contact">
       <div className={styles["logo-col"]}>
         <Link href="/">
           <div className={styles.logo}>

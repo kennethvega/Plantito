@@ -80,6 +80,9 @@ const Navbar = () => {
             <li onClick={() => setActive(false)}>
               <Link href="/about">About</Link>
             </li>
+            <li onClick={() => setActive(false)}>
+              <Link href="/#contact">Contact us</Link>
+            </li>
           </ul>
         </nav>
         <div
