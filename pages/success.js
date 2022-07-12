@@ -4,7 +4,7 @@ import { BsBagCheckFill } from "react-icons/bs";
 import { useStateContext } from "../context/StateContext";
 import Image from "next/image";
 import plantImage from "../images/hero-image.png";
-
+import { runFireWorks } from "../lib/utility";
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
@@ -13,6 +13,7 @@ const Success = () => {
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
+    runFireWorks();
   }, []);
   return (
     <div className="success-container">
