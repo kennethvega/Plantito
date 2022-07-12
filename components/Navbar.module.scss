@@ -50,7 +50,7 @@
       a {
         color: var(--primary-color);
         text-decoration: none;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 500;
         transition: all 0.3s;
         @include mixin.respond(phone-big) {
@@ -127,7 +127,7 @@
 }
 
 .cart-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--primary-color);
   cursor: pointer;
   position: relative;
