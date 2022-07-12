@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
-
+import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import { Cart } from "./";
 import { motion } from "framer-motion";
 import { useStateContext } from "../context/StateContext";
+import logo from "../images/plantitoLogo.png";
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities, active, setActive } =
     useStateContext();
@@ -16,12 +17,7 @@ const Navbar = () => {
     setScrollPos(document.body.getBoundingClientRect().top);
     setShowHeader(document.body.getBoundingClientRect().top > scrollPos);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
+
   const handleClick = () => {
     if (active === true) {
       setActive(false);
@@ -29,7 +25,14 @@ const Navbar = () => {
       setActive(true);
     }
   };
-  console.log(active);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -39,7 +42,7 @@ const Navbar = () => {
       <div
         className={`${styles["navbar-container"]} ${
           showHeader ? styles.visible : styles.hidden
-        }`}
+        } `}
       >
         <div className={styles.burger}>
           <div
@@ -65,6 +68,14 @@ const Navbar = () => {
           }
         >
           <ul>
+            {active && (
+              <Link href="/">
+                <div onClick={() => setActive(false)} className={styles.logo2}>
+                  <Image src={logo} alt="plantito-logo image" />
+                  <span> Plantito</span>
+                </div>
+              </Link>
+            )}
             <li onClick={() => setActive(false)}>
               <Link href="/#Plants">Plants</Link>
             </li>
@@ -72,12 +83,14 @@ const Navbar = () => {
               <Link href="/about">About</Link>
             </li>
           </ul>
-          <div className={styles.overlay}></div>
         </nav>
-
+        <div
+          className={active ? `${styles.overlay}` : ""}
+          onClick={() => setActive(false)}
+        ></div>
         <Link href="/">
           <div className={styles.logo}>
-            <img src="./plantito-logo.svg" alt="plantito-logo image" />
+            <Image src={logo} alt="plantito-logo image" />
             <span> Plantito</span>
           </div>
         </Link>

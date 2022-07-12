@@ -15,6 +15,7 @@ import { urlFor } from "../lib/client";
 import styles from "./Cart.module.scss";
 import Image from "next/image";
 import emptyCart from "../images/Cart-Transparent-PNG.jpg";
+import getStripe from "../lib/getStripe";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -25,9 +26,23 @@ const Cart = () => {
     setShowCart,
     toggleCartItemQuanitity,
     onRemove,
-    pot,
-    indexColor,
   } = useStateContext();
+
+  const handleCheckOut = async () => {
+    const stripe = await getStripe();
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(cartItems),
+    });
+    if (response.statusCode === 500) return;
+    const data = await response.json();
+
+    toast.loading("Redirecting...");
+    stripe.redirectToCheckout({ sessionId: data.id });
+  };
 
   return (
     <div className={styles["cart-wrapper"]} ref={cartRef}>
@@ -80,7 +95,6 @@ const Cart = () => {
                   <div className={`${styles.flex} ${styles.top}`}>
                     <h5>{item.name}</h5>
 
-                    {console.log(item.id, item.name)}
                     <h4>${item.price}</h4>
                   </div>
                   <p>{item.potColor} Ceramic Pot</p>
@@ -123,6 +137,11 @@ const Cart = () => {
             <div className={styles.total}>
               <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
+            </div>
+            <div className={styles["btn-container"]}>
+              <button type="button" className="btn" onClick={handleCheckOut}>
+                Pay with stripe
+              </button>
             </div>
           </div>
         )}

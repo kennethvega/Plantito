@@ -30,6 +30,20 @@
   //   width: 100%;
   // }
 }
+.cart-bottom {
+  position: absolute;
+  bottom: 12px;
+  right: 5px;
+  width: 100%;
+  padding: 3rem 6.5rem;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40rem;
+  margin: auto;
+}
 .cart-heading {
   display: flex;
   align-items: center;
