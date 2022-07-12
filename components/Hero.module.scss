@@ -2,8 +2,11 @@
 .hero-section {
   max-width: 130rem;
   align-items: center;
-  padding: 15rem 4.4rem;
+  padding: 15rem 3.2rem;
   margin: 0 auto;
+  @include mixin.respond(tab-land) {
+    max-width: 120rem;
+  }
 
   grid-template-columns: 60% 40%;
   span {
