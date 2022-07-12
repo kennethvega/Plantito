@@ -78,9 +78,7 @@
   top: 15px;
   left: 45%;
   gap: 1rem;
-  // img {
-  //   width: 4rem;
-  // }
+
   @include mixin.respond(phone-big) {
     left: 40%;
   }

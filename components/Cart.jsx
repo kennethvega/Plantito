@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
 import styles from "./Cart.module.scss";
+import classes from "../styles/Product.module.scss";
 import Image from "next/image";
 import emptyCart from "../images/Cart-Transparent-PNG.jpg";
 import getStripe from "../lib/getStripe";

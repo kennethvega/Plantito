@@ -6,7 +6,7 @@ import styles from "./Navbar.module.scss";
 import { Cart } from "./";
 import { motion } from "framer-motion";
 import { useStateContext } from "../context/StateContext";
-import logo from "../images/plantitoLogo.png";
+import Logo from "../images/plantito-logo.svg";
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities, active, setActive } =
     useStateContext();
@@ -58,8 +58,6 @@ const Navbar = () => {
             <div className={styles.line3}></div>
           </div>
         </div>
-        {/*  <nav className={styles["nav-links"]}> */}
-
         <nav
           className={
             active === true
@@ -71,7 +69,7 @@ const Navbar = () => {
             {active && (
               <Link href="/">
                 <div onClick={() => setActive(false)} className={styles.logo2}>
-                  <Image src={logo} alt="plantito-logo image" />
+                  <Logo />
                   <span> Plantito</span>
                 </div>
               </Link>
@@ -90,7 +88,7 @@ const Navbar = () => {
         ></div>
         <Link href="/">
           <div className={styles.logo}>
-            <Image src={logo} alt="plantito-logo image" />
+            <Logo />
             <span> Plantito</span>
           </div>
         </Link>
