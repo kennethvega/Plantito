@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 0 4.8rem;
   background-color: var(--bg-color);
   position: fixed;
   top: 0;
@@ -125,8 +125,6 @@
   z-index: 999;
   border-bottom: 1px solid #c9c9c9;
 }
-
-
 
 .cart-icon {
   font-size: 4rem;

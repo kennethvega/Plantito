@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className={`${styles["hero-section"]}  grid container`}>
+    <section className={`${styles["hero-section"]}  grid`}>
       <motion.div className={styles["hero-text"]}>
         <motion.h1
           initial={{ y: 20, opacity: 0 }}

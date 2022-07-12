@@ -16,7 +16,7 @@
     }
   }
   @if $breakpoint == phone-big {
-    @media only screen and (max-width: 44.3125em) {
+    @media only screen and (max-width: 46.25em) {
       @content;
     }
   }

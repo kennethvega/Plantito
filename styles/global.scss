@@ -51,11 +51,11 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: 8.5rem;
+  font-size: 8rem;
   line-height: 102px;
   @include mixin.respond(tab-port) {
     font-size: 7rem;
-    line-height: 60px;
+    line-height: 80px;
   }
   @include mixin.respond(phone) {
     font-size: 6rem;

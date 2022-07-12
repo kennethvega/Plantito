@@ -1,7 +1,10 @@
 @use "../styles/mixin" as mixin;
 .hero-section {
+  max-width: 130rem;
   align-items: center;
-  padding-top: 13rem;
+  padding: 15rem 4.8rem;
+  margin: 0 auto;
+
   grid-template-columns: 60% 40%;
   span {
     color: var(--secondary-color);
