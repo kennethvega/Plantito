@@ -31,7 +31,6 @@ const Plants = ({ products, bestsellers }) => {
 
   return (
     <section
-      id="Plants"
       className={`${styles["section-plants"]}container padding-top margin-top`}
     >
       <motion.div
@@ -40,7 +39,9 @@ const Plants = ({ products, bestsellers }) => {
         transition={{ duration: 0.7 }}
         className={`container margin-top`}
       >
-        <h3 className="margin-bottom">Plantito Plants</h3>
+        <h3 id="Plants" className="margin-bottom">
+          Plantito Plants
+        </h3>
         <div className={styles["app__work-filter"]}>
           {["All", "Indoor", "Outdoor", "Indoor/Outdoor"].map((item, index) => (
             <div
