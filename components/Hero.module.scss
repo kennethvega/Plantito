@@ -1,11 +1,11 @@
 @use "../styles/mixin" as mixin;
 .hero-section {
-  max-width: 130rem;
+  max-width: 140rem;
   align-items: center;
   padding: 13rem 3.2rem;
   margin: 0 auto;
   @include mixin.respond(tab-land) {
-    max-width: 120rem;
+    max-width: 130rem;
   }
 
   grid-template-columns: 60% 40%;
