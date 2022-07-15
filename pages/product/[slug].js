@@ -22,14 +22,13 @@ const ProductDetails = ({ products, product }) => {
     setQty,
   } = useStateContext();
 
-  const handleVariant = () => {
-    if (indexColor === 1) {
-      setQty(1);
-      setIndexColor(0);
-    } else if (indexColor === 0) {
-      setIndexColor(1);
-      setQty(1);
-    }
+  const handleVariant1 = () => {
+    setIndexColor(1);
+    setQty(1);
+  };
+  const handleVariant2 = () => {
+    setIndexColor(0);
+    setQty(1);
   };
   const handleClick = () => {
     if (indexColor === 0) {
@@ -65,7 +64,7 @@ const ProductDetails = ({ products, product }) => {
           `
                   : `${styles["small-image"]}`
               }
-              onClick={() => handleVariant()}
+              onClick={() => handleVariant1()}
             />
             <img
               src={urlFor(product.image)}
@@ -75,7 +74,7 @@ const ProductDetails = ({ products, product }) => {
           `
                   : `${styles["small-image"]}`
               }
-              onClick={() => handleVariant()}
+              onClick={() => handleVariant2()}
             />
           </div>
         </div>
