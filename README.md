@@ -1,9 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-![plantito](https://user-images.githubusercontent.com/100985581/181049232-8167b5df-4d92-473d-8584-59afaa69c2ce.jpg)
+![Group 120](https://user-images.githubusercontent.com/100985581/181049681-a6261c5b-2677-4620-8e5f-407bb3841ad6.jpg)
 
-
-##Plantito
-###Stack: next.js, sanity, scss
+##Plantito e-commerce app for plants
+###Stack: next.js, sanity, scss, stripe
 #Images here
 ## Getting Started
 
