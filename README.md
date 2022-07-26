@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![plantito](https://user-images.githubusercontent.com/100985581/181049232-8167b5df-4d92-473d-8584-59afaa69c2ce.jpg)
 
+
+##Plantito
 ###Stack: next.js, sanity, scss
 #Images here
 ## Getting Started
@@ -11,6 +14,7 @@ npm run dev
 # or
 yarn dev
 ```
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
