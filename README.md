@@ -1,12 +1,12 @@
-
+##Plantito e-commerce app for plants
+##Stack: next.js, sanity, scss, stripe
+##Link: https://plantito.vercel.app/
 
 (https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 ![plantito-ecommerce](https://user-images.githubusercontent.com/100985581/181049995-35b75e7c-34b4-4299-92f3-b24f5acf361f.jpg)
 
-##Plantito e-commerce app for plants
-###Stack: next.js, sanity, scss, stripe
-###https://plantito.vercel.app/
-#Images here
+
+
 ## Getting Started
 
 First, run the development server:
