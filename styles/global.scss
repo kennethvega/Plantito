@@ -96,3 +96,25 @@ h3 {
   font-size: 5rem;
   color: var(--secondary-color);
 }
+.not-found {
+  margin-top: 20rem;
+  margin-bottom: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  & h1 {
+    font-size: 5rem;
+  }
+  & h2 {
+    font-size: 3rem;
+  }
+  & p {
+    font-size: 2rem;
+    & a {
+      font-weight: 900;
+      text-decoration: none;
+    }
+  }
+}
