@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps, router }) {
             key={router.route}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
             <Component {...pageProps} />
           </motion.div>
