@@ -35,8 +35,8 @@ const Plants = ({ products, bestsellers }) => {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
         className={`container margin-top`}
       >
         <h3 id="plants" className="margin-bottom">

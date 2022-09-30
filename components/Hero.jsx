@@ -24,7 +24,7 @@ const Hero = () => {
         >
           Beautiful plants for homes and offices
         </motion.p>
-        <Link href="/#Plants">
+        <Link href="/#plants">
           <motion.button
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

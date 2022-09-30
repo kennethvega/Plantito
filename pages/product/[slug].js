@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../../styles/Product.module.scss";
 import { client, urlFor } from "../../lib/client";
 import { CardPlantList } from "../../components";
@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 
 import { useStateContext } from "../../context/StateContext";
+import { motion } from "framer-motion";
 const ProductDetails = ({ products, product }) => {
   const {
     decQty,
@@ -48,7 +49,12 @@ const ProductDetails = ({ products, product }) => {
   };
   console.log(indexColor);
   return (
-    <div className="container">
+    <motion.div
+      className="container"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+    >
       <div className={styles["product-detail-container"]}>
         <div>
           <div className={styles["image-container"]}>
@@ -147,7 +153,7 @@ const ProductDetails = ({ products, product }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
