@@ -35,11 +35,11 @@ const Plants = ({ products, bestsellers }) => {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         className={`container margin-top`}
       >
-        <h3 id="Plants" className="margin-bottom">
+        <h3 id="plants" className="margin-bottom">
           Plantito Plants
         </h3>
         <div className={styles["app__work-filter"]}>

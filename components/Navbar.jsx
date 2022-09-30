@@ -57,7 +57,7 @@ const Navbar = () => {
               </Link>
             )}
             <li onClick={() => setActive(false)}>
-              <Link href="/#Plants">Plants</Link>
+              <Link href="/#plants">Plants</Link>
             </li>
             <li onClick={() => setActive(false)}>
               <Link href="/about">About</Link>
