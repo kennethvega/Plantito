@@ -1,9 +1,15 @@
 import styles from "../styles/about.module.scss";
 import React from "react";
+import { motion } from "framer-motion";
 
 const about = () => {
   return (
-    <div className={styles["about-container"]}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className={styles["about-container"]}
+    >
       <h3>About Plantito</h3>
       <p>
         Plantito is a fully functioning e-commerce website for plants and is
@@ -29,7 +35,7 @@ const about = () => {
         </a>
         .
       </p>
-    </div>
+    </motion.div>
   );
 };
 
