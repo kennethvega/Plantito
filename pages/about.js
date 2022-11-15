@@ -15,7 +15,7 @@ const about = () => {
         Plantito is a fully functioning e-commerce website for plants and is
         only a personal project of{" "}
         <a
-          href="https:kennethvega.com"
+          href="https://www.kennethvega.com/"
           target="_blank"
           rel="noreferrer noopener"
         >

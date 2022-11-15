@@ -13,6 +13,7 @@ export const StateContext = ({ children }) => {
   const [active, setActive] = useState(false);
   let foundProduct;
   let index;
+
   useEffect(() => {
     const bodyStyle = document.body.style;
     if (showCart || active) {
@@ -57,19 +58,7 @@ export const StateContext = ({ children }) => {
     );
   };
 
-  // const onRemove = (product) => {
-  //   foundProduct = cartItems.find((item) => item.id === product.id);
-  //   const newCartItems = cartItems.filter((item) => item.id !== product.id);
 
-  //   setTotalPrice(
-  //     (prevTotalPrice) =>
-  //       prevTotalPrice - foundProduct.price * foundProduct.quantity
-  //   );
-  //   setTotalQuantities(
-  //     (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
-  //   );
-  //   setCartItems(newCartItems);
-  // };
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item.id === product.id);
     const newCartItems = cartItems.filter((item) => item.id !== product.id);
@@ -122,15 +111,7 @@ export const StateContext = ({ children }) => {
     });
   };
 
-  // useEffect(() => {
-  //   if (indexColor === 0) {
-  //     setPot("white");
-  //   } else if (indexColor === 1) {
-  //     setPot("black");
-  //   } else {
-  //     return "white";
-  //   }
-  // }, [indexColor]);
+
 
   return (
     <Context.Provider
